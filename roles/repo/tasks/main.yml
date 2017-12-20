@@ -3,24 +3,24 @@
   shell: timedatectl set-timezone Asia/Tokyo
 
 - name: Set fastestmirror filter
-	lineinfile: >
-		dest=/etc/yum/pluginconf.d/fastestmirror.conf
-		state=present
-		regexp='^include_only'
-		line='include_only=.jp'
-		insertafter='#include_only'
+  lineinfile: >
+    dest=/etc/yum/pluginconf.d/fastestmirror.conf
+    state=present
+    regexp='^include_only'
+    line='include_only=.jp'
+    insertafter='#include_only'
 
 - name: Add EPEL repository
-	shell: creates=/etc/yum.repos.d/epel.repo yum install -y epel-release
+  shell: creates=/etc/yum.repos.d/epel.repo yum install -y epel-release
 
 - name: Add Remi repository
-	command: yum -y install http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+  command: yum -y install http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 
 - name: yum makecache
-	command: yum makecache
+  command: yum makecache
 
 - name: yum update
-	yum: name=* state=latest
+  yum: name=* state=latest
 
 - name: disable selinux
   selinux: state=disabled

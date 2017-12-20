@@ -1,8 +1,8 @@
 ---
 - name create static page
-	template: src=index.html dest=/var/www/html
+  copy: src=../templates/index.html dest=/var/www/html/
 
 - name create php page
-	template: src=phpinfo.php dest=/var/www/html
+  copy: src=../templates/phpinfo.php dest=/var/www/html/
 
 

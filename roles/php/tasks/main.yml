@@ -1,21 +1,21 @@
 ---
 - name: install php
-	yum: name={{ item }} state=latest enablerepo=remi,remi-php71
-	with_items:
-    - php
-		- php-devel
-		- php-fpm
-		- php-mbstring
-		- php-pdo
-		- php-mcrypt
-		- php-mysqlnd
-		- php-opcache
-		- php-xml
-		- php-xdebug
-		- php-gd
-		- php-pecl-apcu
+  yum: name={{ item }} state=latest enablerepo=remi,remi-php71
+  with_items:
+  - php
+    - php-devel
+    - php-fpm
+    - php-mbstring
+    - php-pdo
+    - php-mcrypt
+    - php-mysqlnd
+    - php-opcache
+    - php-xml
+    - php-xdebug
+    - php-gd
+    - php-pecl-apcu
 
 - name: Copy php-pecl-apcu configuration
   template: src=40-apcu.ini dest=/etc/php.d/
-	notify: restart php-fpm
+  notify: restart php-fpm
 

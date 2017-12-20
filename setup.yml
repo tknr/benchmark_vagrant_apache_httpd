@@ -1,12 +1,12 @@
 ---
-- name:	install php,apache httpd
-  hosts:	vagrant
-	remote_user:	vagrant
-	become:	yes
-	
-	roles:
-		- repo
-		- php
-		- apache
-		- demo
+- name: install php,apache httpd
+  hosts: vagrant
+  remote_user: vagrant
+  become: yes
+  
+  roles:
+  - repo
+  - php
+  - apache
+  - demo
 
