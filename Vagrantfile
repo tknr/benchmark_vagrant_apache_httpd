@@ -13,6 +13,7 @@ Vagrant.configure("2") do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "bento/centos-7.4"
+  config.vm.box_url = "bento/centos-7.4"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -25,8 +26,8 @@ Vagrant.configure("2") do |config|
   # NOTE: This will enable public access to the opened port
   # config.vm.network "forwarded_port", guest: 80, host: 8080
 
-config.vm.network "forwarded_port", guest: 80, host: 8031
-config.vm.network "forwarded_port", guest: 22, host: 2231 , id: "ssh"
+#config.vm.network "forwarded_port", guest: 80, host: 8031
+#config.vm.network "forwarded_port", guest: 22, host: 2231 , id: "ssh"
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine and only allow access
@@ -37,7 +38,7 @@ config.vm.network "forwarded_port", guest: 22, host: 2231 , id: "ssh"
   # using a specific IP.
   # config.vm.network "private_network", ip: "192.168.33.10"
 
-	config.vm.network "private_network", ip: "192.168.33.31"
+  config.vm.network "private_network", ip: "192.168.33.31"
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
