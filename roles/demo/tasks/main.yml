@@ -1,8 +1,8 @@
 ---
-- name create static page
+- name: copy demo static page
   copy: src=../templates/index.html dest=/var/www/html/
 
-- name create php page
+- name: copy demo php page
   copy: src=../templates/phpinfo.php dest=/var/www/html/
 
 
